@@ -4,6 +4,8 @@ all: thue
 
 check: thue
 	install -d tmp
+	./thue -h > /dev/null
+	./thue --help > /dev/null
 	./thue test/hello.t > tmp/hello
 	diff -u test/hello.txt tmp/hello
 	./thue -s 15000 test/seq.t > tmp/seq

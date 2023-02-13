@@ -76,8 +76,8 @@ int main(int argc, const char *argv[])
 		Help();
 		return EXIT_FAILURE;
 	}
-	int i;
-	for (i=1; i<argc-1; i++) {
+	int i, k = -1;
+	for (i=1;i<argc;i++) {
 		if (std::strcmp("-h", argv[i]) == 0 ||
 			std::strcmp("--help", argv[i]) == 0) {
 			Help();
@@ -112,7 +112,7 @@ int main(int argc, const char *argv[])
 			continue;
 		}
 		if (std::strcmp("-s", argv[i]) == 0) {
-			if (++i < argc-1) {
+			if (++i < argc) {
 				stop = std::stoi(argv[i]);
 				if (stop < 0) {
 					std::cerr << "!error: give the -s option a non-negative integer" << std::endl;
@@ -122,9 +122,20 @@ int main(int argc, const char *argv[])
 				std::cerr << "!error: give the -s option a non-negative integer" << std::endl;
 				return EXIT_FAILURE;
 			}
+			continue;
 		}
+
+		if (k > 0) {
+			std::cerr << "!error: two or more arguments given" << std::endl;
+			return EXIT_FAILURE;
+		}
+		k = i;
 	}
-	std::ifstream ifs(argv[i], std::ios::binary);
+	if (k <= 0) {
+		std::cerr << "!error: no code file given" << std::endl;
+		return EXIT_FAILURE;
+	}
+	std::ifstream ifs(argv[k], std::ios::binary);
 	if (!ifs) {
 		std::cerr << "!error: failed to open " << argv[i] << std::endl;
 		return EXIT_FAILURE;
