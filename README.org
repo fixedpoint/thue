@@ -1,0 +1,35 @@
+#+TITLE: thue: a C++ implementation of the Thue language
+
+* Abstract
+This is a C++ project of a command-line processor of John Colagiola's [[https://en.wikipedia.org/wiki/Thue_(programming_language)][Thue programming language]].
+
+* Synopsis
+
+=thue [-cdlnr] [-s N] FILE=
+
+=thue -h=
+
+** Description
+The program reads and processes the Thue code in =FILE=; it reads the input from =stdin= and prints the output in =stdout=.
+By default it follows [[http://lvogel.free.fr/thue.htm][the convention on newlines in the code proposed by Laurent Vogel]].
+
+** Options
+
+- =-c= :: leave CR at EOL as is
+- =-d= :: enable the debug print
+- =-l= :: enable the Left mode: priority given to the leftmost match
+- =-n= :: disable the feature to print a newline by rules of form =...::=~=
+- =-r= :: enable the Right mode; priority given to the rightmost match
+- =-s N= :: stop after =N= steps at most
+- =-h=, =--help= :: print the help
+
+* Examples
+See the test code in files of name =test/*.t=.
+- =test/incr.t= :: read a binary number, increment it, and print the result
+- =test/seq.t= :: print an initial segment of the [[https://en.wikipedia.org/wiki/Thue%E2%80%93Morse_sequence][Thue-Morse sequence]]
+
+* Author
+Takeshi Abe <tabe@fixedpoint.jp>
+
+* License
+The MIT license
