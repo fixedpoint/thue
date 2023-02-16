@@ -1,0 +1,37 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build-on-ubuntu-22_04:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v2
+      - run: make all check
+  build-on-ubuntu-20_04:
+    runs-on: ubuntu-20.04
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v2
+      - run: make all check
+  build-on-macos-12:
+    runs-on: macos-12
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v2
+      - run: make all check
+  build-on-macos-11:
+    runs-on: macos-11
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v2
+      - run: make all check
