@@ -201,7 +201,7 @@ int main(int argc, const char *argv[])
 	for (int i = 0; stop < 0 || i < stop; ++i) {
 		pos.clear();
 		for (const auto &r : rules) {
-			int n = 0;
+			size_t n = 0;
 			do {
 				n = state.find(r.lhs, n);
 				if (n == std::string::npos)

@@ -29,4 +29,4 @@ clean:
 	-rm thue
 
 thue: thue.cc
-	$(CXX) -O3 -std=c++17 -o $@ $<
+	$(CXX) -Wall -W -O3 -std=c++17 -o $@ $<
