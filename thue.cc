@@ -57,7 +57,7 @@ void TrimCrAtEol(std::string &s) {
 		s.resize(n-1);
 }
 
-using Match = std::pair<int, const Rule &>;
+using Match = std::pair<size_t, const Rule &>;
 
 bool CompareMatch(const Match &x, const Match &y) {
 	return x.first < y.first;
@@ -227,7 +227,7 @@ int main(int argc, const char *argv[])
 			it = std::max_element(pos.begin(), pos.end(), CompareMatch);
 			break;
 		}
-		int n = it->first;
+		size_t n = it->first;
 		const auto &r = it->second;
 		switch (r.type) {
 		case RuleType::kProduction:
