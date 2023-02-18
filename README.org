@@ -26,6 +26,7 @@ By default it follows [[http://lvogel.free.fr/thue.htm][the convention on newlin
 * Examples
 See the test code in files of name =test/*.t=.
 - =test/incr.t= :: read a binary number, increment it, and print the result
+- =test/quine.t= :: a Quine
 - =test/seq.t= :: print an initial segment of the [[https://en.wikipedia.org/wiki/Thue%E2%80%93Morse_sequence][Thue-Morse sequence]]
 
 * Author
