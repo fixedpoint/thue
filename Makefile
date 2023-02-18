@@ -23,6 +23,12 @@ check: thue
 	diff -u test/incr.txt tmp/incr
 	./thue -s 42 test/yes.t > tmp/yes
 	diff -u test/yes.txt tmp/yes
+	./thue test/quine.t > tmp/quine
+	diff -u test/quine.t tmp/quine
+	./thue test/quine2.t > tmp/quine2
+	diff -u test/quine2.t tmp/quine2
+	./thue test/quine3.t > tmp/quine3
+	diff -u test/quine3.t tmp/quine3
 
 clean:
 	-rm -rf tmp
