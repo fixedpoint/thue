@@ -5,7 +5,7 @@ This is a C++ project of a command-line processor of John Colagiola's [[https://
 
 * Synopsis
 
-=thue [-cdlnr] [-s N] FILE=
+=thue [-cdlnr] [-S U] [-s N] FILE=
 
 =thue -h=
 
@@ -20,6 +20,7 @@ By default it follows [[http://lvogel.free.fr/thue.htm][the convention on newlin
 - =-l= :: enable the Left mode: priority given to the leftmost match
 - =-n= :: disable the feature to print a newline by rules of form =...::=~=
 - =-r= :: enable the Right mode; priority given to the rightmost match
+- =-S U= :: specify =U= as a random seed
 - =-s N= :: stop after =N= steps at most
 - =-h=, =--help= :: print the help
 

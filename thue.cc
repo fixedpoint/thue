@@ -36,13 +36,14 @@ struct Rule {
 };
 
 void Help(void) {
-	std::cout << "thue [-cdlnr | -h] [-s N] FILE" << std::endl
+	std::cout << "thue [-cdlnr | -h] [-S U] [-s N] FILE" << std::endl
 			  << "options:" << std::endl
 			  << "  -c          leave CR at EOL as is" << std::endl
 			  << "  -d          enable the debug print" << std::endl
 			  << "  -l          enable the Left mode: priority given to the leftmost match" << std::endl
 			  << "  -n          disable the feature to print a newline by rules of form ...::=~" << std::endl
 			  << "  -r          enable the Right mode; priority given to the rightmost match" << std::endl
+			  << "  -S U        specify U as a random seed" << std::endl
 			  << "  -s N        stop after N steps at most" << std::endl
 			  << "  -h, --help  print the help" << std::endl;
 }
@@ -71,6 +72,7 @@ int main(int argc, const char *argv[])
 	Mode mode = Mode::kDefault;
 	bool leave_cr = false;
 	bool newline_convention = true;
+	int s_seed = -1;
 	int stop = -1;
 
 	if (argc < 2) {
@@ -110,6 +112,19 @@ int main(int argc, const char *argv[])
 				return EXIT_FAILURE;
 			}
 			mode = Mode::kRight;
+			continue;
+		}
+		if (std::strcmp("-S", argv[i]) == 0) {
+			if (++i < argc) {
+				s_seed = std::stoi(argv[i]);
+				if (s_seed < 0) {
+					std::cerr << "!error: give the -S option a non-negative integer" << std::endl;
+					return EXIT_FAILURE;
+				}
+			} else {
+				std::cerr << "!error: give the -S option a non-negative integer" << std::endl;
+				return EXIT_FAILURE;
+			}
 			continue;
 		}
 		if (std::strcmp("-s", argv[i]) == 0) {
@@ -191,12 +206,21 @@ int main(int argc, const char *argv[])
 	ifs.close();
 
 	std::string state = std::accumulate(data.begin(), data.end(), std::string(""));
-	if (debug)
+
+	std::mt19937::result_type seed;
+	if (s_seed >= 0) {
+		seed = static_cast<std::mt19937::result_type>(s_seed);
+	} else {
+		std::random_device rd;
+		seed = rd();
+	}
+	std::mt19937 g(seed);
+	if (debug) {
+		std::cerr << "!seed: " << seed << std::endl;
 		std::cerr << "!state:" << std::endl
 				  << "|" << state << std::endl;
+	}
 
-	std::random_device rd;
-	std::mt19937 g(rd());
 	std::vector<Match> pos;
 	for (int i = 0; stop < 0 || i < stop; ++i) {
 		pos.clear();

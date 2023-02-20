@@ -1,7 +1,9 @@
 *~
 .DS_Store
 /thue
+/thue.exe
 /thue.html
 /thue.js
+/thue.obj
 /thue.wasm
 /tmp/
