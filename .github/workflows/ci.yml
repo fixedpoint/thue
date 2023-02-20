@@ -48,6 +48,9 @@ jobs:
           call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
           cl /EHsc thue.cc
         shell: cmd
+      - uses: actions/upload-artifact@v3
+        with:
+          path: thue.exe
 
   ci-on-windows-2019:
     runs-on: windows-2019
@@ -58,3 +61,6 @@ jobs:
           call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
           cl /EHsc thue.cc
         shell: cmd
+      - uses: actions/upload-artifact@v3
+        with:
+          path: thue.exe
