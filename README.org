@@ -1,5 +1,7 @@
 #+TITLE: thue: a C++ implementation of the Thue language
 
+[[file:artwork/logo32x32.svg]]
+
 * Abstract
 This is a C++ project of a command-line processor of John Colagiola's [[https://en.wikipedia.org/wiki/Thue_(programming_language)][Thue programming language]].
 

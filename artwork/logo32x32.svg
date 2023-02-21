@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666666 8.4666666"
+   version="1.1"
+   id="svg545"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   sodipodi:docname="thue32x32.svg"
+   inkscape:export-filename="thue32x32.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview547"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="4.3588449"
+     inkscape:cx="27.071392"
+     inkscape:cy="3.3265694"
+     inkscape:window-width="1309"
+     inkscape:window-height="819"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs542" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:STIXGeneral;-inkscape-font-specification:'STIXGeneral Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-0.30690554"
+       y="-2.2468417"
+       id="text668"><tspan
+         sodipodi:role="line"
+         id="tspan666"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:STIXGeneral;-inkscape-font-specification:'STIXGeneral Bold';stroke-width:0.264583"
+         x="-0.30690554"
+         y="-2.2468417"></tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:STIXGeneral;-inkscape-font-specification:'STIXGeneral Bold';stroke-width:0.264583"
+         id="tspan670"
+         x="-0.30690554"
+         y="5.6906581">::=</tspan></text>
+  </g>
+</svg>
