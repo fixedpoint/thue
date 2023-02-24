@@ -3,6 +3,7 @@
 all: thue
 
 check: \
+	tmp/no-such-file \
 	tmp/help.log \
 	tmp/hello.log \
 	tmp/seq.log \
@@ -29,6 +30,9 @@ tmp:
 
 tmp/h: thue | tmp
 	./thue -h > $@
+
+tmp/no-such-file: thue | tmp
+	! ./thue no-such-file 2> $@
 
 tmp/help: thue | tmp
 	./thue --help > $@

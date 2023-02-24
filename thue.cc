@@ -153,7 +153,7 @@ int main(int argc, const char *argv[])
 	}
 	std::ifstream ifs(argv[k], std::ios::binary);
 	if (!ifs) {
-		std::cerr << "!error: failed to open " << argv[i] << std::endl;
+		std::cerr << "!error: failed to open " << argv[k] << std::endl;
 		return EXIT_FAILURE;
 	}
 
