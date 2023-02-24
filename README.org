@@ -9,7 +9,9 @@ This is a C++ project of a command-line processor of John Colagiola's [[https://
 
 =thue [-cdlnr] [-S U] [-s N] FILE=
 
-=thue -h=
+=thue [-h | --help]=
+
+=thue [-V | --version]=
 
 ** Description
 The program reads and processes the Thue code in =FILE=; it reads the input from =stdin= and prints the output in =stdout=.
@@ -25,6 +27,7 @@ By default it follows [[http://lvogel.free.fr/thue.htm][the convention on newlin
 - =-S U= :: specify =U= as a random seed
 - =-s N= :: stop after =N= steps at most
 - =-h=, =--help= :: print the help
+- =-V=, =--version= :: print the version
 
 * Examples
 See the test code in files of name =test/*.t=.

@@ -4,7 +4,10 @@ all: thue
 
 check: \
 	tmp/no-such-file \
-	tmp/help.log \
+	tmp/help1.log \
+	tmp/help2.log \
+	tmp/version1.log \
+	tmp/version2.log \
 	tmp/hello.log \
 	tmp/seq.log \
 	tmp/io.log \
@@ -34,10 +37,28 @@ tmp/h: thue | tmp
 tmp/no-such-file: thue | tmp
 	! ./thue no-such-file 2> $@
 
-tmp/help: thue | tmp
+tmp/help1: thue | tmp
+	./thue -h > $@
+
+tmp/help1.log: tmp/h tmp/help1
+	diff -u $^ > $@
+
+tmp/help2: thue | tmp
 	./thue --help > $@
 
-tmp/help.log: tmp/h tmp/help
+tmp/help2.log: tmp/h tmp/help2
+	diff -u $^ > $@
+
+tmp/version1: thue | tmp
+	./thue -V > $@
+
+tmp/version1.log: VERSION tmp/version1
+	diff -u $^ > $@
+
+tmp/version2: thue | tmp
+	./thue --version > $@
+
+tmp/version2.log: VERSION tmp/version2
 	diff -u $^ > $@
 
 tmp/hello: test/hello.t thue | tmp

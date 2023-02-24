@@ -36,7 +36,7 @@ struct Rule {
 };
 
 void Help(void) {
-	std::cout << "thue [-cdlnr | -h] [-S U] [-s N] FILE" << std::endl
+	std::cout << "thue [-cdlnr] [-S U] [-s N] FILE" << std::endl
 			  << "options:" << std::endl
 			  << "  -c          leave CR at EOL as is" << std::endl
 			  << "  -d          enable the debug print" << std::endl
@@ -45,7 +45,12 @@ void Help(void) {
 			  << "  -r          enable the Right mode; priority given to the rightmost match" << std::endl
 			  << "  -S U        specify U as a random seed" << std::endl
 			  << "  -s N        stop after N steps at most" << std::endl
-			  << "  -h, --help  print the help" << std::endl;
+			  << "  -h, --help     print the help" << std::endl
+			  << "  -V, --version  print the version" << std::endl;
+}
+
+void Version() {
+	std::cout << "0.0.1" << std::endl;
 }
 
 bool ContainsNonWhitespace(const std::string &s) {
@@ -84,6 +89,11 @@ int main(int argc, const char *argv[])
 		if (std::strcmp("-h", argv[i]) == 0 ||
 			std::strcmp("--help", argv[i]) == 0) {
 			Help();
+			return EXIT_SUCCESS;
+		}
+		if (std::strcmp("-V", argv[i]) == 0 ||
+			std::strcmp("--version", argv[i]) == 0) {
+			Version();
 			return EXIT_SUCCESS;
 		}
 		if (std::strcmp("-c", argv[i]) == 0) {
