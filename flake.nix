@@ -1,7 +1,7 @@
 {
   description = "A flake for building thue";
 
-  inputs.nixpkgs.url = github:NixOS/nixpkgs/nixos-22.11;
+  inputs.nixpkgs.url = github:NixOS/nixpkgs/nixos-23.05;
 
   outputs = { self, nixpkgs }:
     let
@@ -11,13 +11,7 @@
           pname = "thue";
           version = "0.0.1";
           src = self;
-          buildPhase = "make";
           doCheck = true;
-          checkPhase = "make check";
-          installPhase = ''
-            install -d $out/bin
-            install -m 0555 thue $out/bin
-          '';
       };
     in {
       packages.aarch64-darwin.default = derivation_thue "aarch64-darwin";

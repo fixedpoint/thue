@@ -1,4 +1,4 @@
-.PHONY: all check clean
+.PHONY: all check clean install
 
 all: thue
 
@@ -24,6 +24,10 @@ check: \
 clean:
 	-rm -rf tmp
 	-rm thue
+
+install:
+	install -d $(out)/bin
+	install thue $(out)/bin/
 
 thue: thue.cc
 	$(CXX) -Wall -W -O3 -std=c++17 -o $@ $<
