@@ -3,7 +3,7 @@
 [[file:artwork/logo32x32.svg]]
 
 * Abstract
-This is a C++ project of a command-line processor of John Colagiola's [[https://en.wikipedia.org/wiki/Thue_(programming_language)][Thue programming language]].
+This is a C++ project of a command-line processor of John Colagiola's [[https://esolangs.org/wiki/Thue][Thue programming language]].
 
 * Synopsis
 
@@ -31,9 +31,9 @@ By default it follows [[http://lvogel.free.fr/thue.htm][the convention on newlin
 
 * Examples
 See the test code in files of name =test/*.t=.
-- [[file:test/incr.t][test/incr.t]] :: read a binary number, increment it, and print the result
-- [[file:test/quine.t][test/quine.t]] :: a Quine
-- [[file:test/seq.t][test/seq.t]] :: print an initial segment of the [[https://en.wikipedia.org/wiki/Thue%E2%80%93Morse_sequence][Thue-Morse sequence]]
+- [[file:src/test/incr.t][src/test/incr.t]] :: read a binary number, increment it, and print the result
+- [[file:src/test/quine.t][src/test/quine.t]] :: a Quine
+- [[file:src/test/seq.t][src/test/seq.t]] :: print an initial segment of the [[https://en.wikipedia.org/wiki/Thue%E2%80%93Morse_sequence][Thue-Morse sequence]]
 
 * Author
 Takeshi Abe <tabe@fixedpoint.jp>
