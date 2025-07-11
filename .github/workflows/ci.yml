@@ -35,8 +35,8 @@ jobs:
         run: make check
         working-directory: ./src
 
-  ci-on-ubuntu-20_04:
-    runs-on: ubuntu-20.04
+  ci-on-macos-15:
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
       - name: Build
@@ -68,6 +68,21 @@ jobs:
         run: make check
         working-directory: ./src
 
+  ci-on-windows-2025:
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
+          cl /EHsc thue.cc
+        shell: cmd
+        working-directory: ./src
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-2025-thue-exe
+          path: src/thue.exe
+
   ci-on-windows-2022:
     runs-on: windows-2022
     steps:
@@ -83,17 +98,3 @@ jobs:
           name: windows-2022-thue-exe
           path: src/thue.exe
 
-  ci-on-windows-2019:
-    runs-on: windows-2019
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build
-        run: |
-          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
-          cl /EHsc thue.cc
-        shell: cmd
-        working-directory: ./src
-      - uses: actions/upload-artifact@v4
-        with:
-          name: windows-2019-thue-exe
-          path: src/thue.exe
